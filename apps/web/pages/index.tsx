@@ -13,17 +13,17 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="text-3xl text-primary">My dogs!</h1>
-      <div className="py-3">
+      <ul className="p-3 list-disc">
         {dogsQuery.data?.map((dog) => (
-          <div key={dog.name}>
+          <li key={dog.name}>
             {dog.name}{" "}
             <span className={dog.goodBoy ? "text-green-700" : "text-red-700"}>
               {dog.goodBoy ? "is" : "IS NOT"}
             </span>{" "}
             a good boy.
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
