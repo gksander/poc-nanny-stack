@@ -7,6 +7,6 @@
     "index.ts"
   ],
   "dependencies": {
-    "@trpc/react": "^9.25.3"
+    "@trpc/react": "9.25.3"
   }
 }
