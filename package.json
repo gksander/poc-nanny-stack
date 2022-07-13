@@ -10,7 +10,13 @@
       "apps/*"
     ]
   },
+  "scripts": {
+	"dev:web": "yarn workspace @myapp/web run dev",
+	"dev:mobile": "yarn workspace @myapp/mobile run start",
+	"dev": "concurrently -c blue,red \"yarn dev:web\" \"yarn dev:mobile\""
+  },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "prettier": "^2.7.1",
     "typescript": "4.7.4"
   }
