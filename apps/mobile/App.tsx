@@ -25,17 +25,17 @@ export default function App() {
 }
 
 const AppBody = () => {
-  const dogsQuery = trpc.useQuery(["getDogs"]);
+  const todosQuery = trpc.useQuery(["getTodos"]);
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
       <View className="p-3 flex-1">
-        <Text className="text-4xl text-primary">My dogs</Text>
+        <Text className="text-4xl text-primary">My TODOs</Text>
         <View>
-          {dogsQuery.data?.map((dog) => (
-            <View key={dog.name}>
+          {todosQuery.data?.map((item) => (
+            <View key={item.id}>
               <Text>
-                {dog.name} {dog.goodBoy ? "is" : "IS NOT"} a good boy
+                "{item.title}" {item.isComplete ? "is" : "IS NOT"} complete
               </Text>
             </View>
           ))}
